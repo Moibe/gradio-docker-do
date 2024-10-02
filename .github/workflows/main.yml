@@ -17,6 +17,6 @@ jobs:
         - name: connect and pull
           run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
         - name: rebuild docker
-          run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker build -t docker-do:latest ."
+          run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker build -t docker-do:latest . && docker run -d -p 7860:7860 docker-do:latest"
         - name: cleanup
           run: rm -rf ~/.ssh
