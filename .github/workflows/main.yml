@@ -18,8 +18,8 @@ jobs:
         - name: connect and pull
           run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
         
-        # - name: stop all containers
-        #   run: |
-        #       ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }}"
-        #       ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash -s" < stop_containers.sh
+        - name: stop all containers
+          run: |
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }}"
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash -s" < stop_containers.sh
               
