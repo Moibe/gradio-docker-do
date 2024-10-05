@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /code/gradio-docker-do
-docker stop $(docker ps -q)
+docker stop silly_lamarr
