@@ -20,4 +20,5 @@ jobs:
         
         - name: stop all containers
           run: |
-              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker stop bold_diffie"
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
+              "cd ${{ secrets.WORK_DIR }} && docker stop unruffled_mendel"
