@@ -20,4 +20,4 @@ jobs:
         
         - name: stop all containers
           run: |
-              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x remove_containers.sh && ./remove_containers.sh"      
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x remove_containers.sh"      
