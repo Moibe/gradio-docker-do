@@ -1,3 +1,5 @@
+name: Docker Operations
+
 on:
     push:
         branches:
@@ -27,7 +29,7 @@ jobs:
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x erase_images.sh && ./erase_images.sh"      
         
         - name: rebuild docker
-          run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker build -t docker-do . && docker run -d -p 7860:7860 docker-do"
+          run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker build -t docker-do . && docker run -d -p 80:7860 docker-do"
         
         - name: cleanup
           run: rm -rf ~/.ssh
