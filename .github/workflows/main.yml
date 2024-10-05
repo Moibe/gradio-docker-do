@@ -20,5 +20,5 @@ jobs:
         
         - name: stop all containers
           run: |
-              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && ./stop_containers.sh"
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x stop_containers.sh && ./stop_containers.sh"
               # ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash -s" < stop_containers.sh         
