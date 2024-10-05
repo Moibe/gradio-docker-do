@@ -21,3 +21,7 @@ jobs:
         - name: stop all containers
           run: |
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x remove_containers.sh && ./remove_containers.sh"      
+
+        - name: remove all images
+          run: |
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && chmod +x erase_images.sh && ./erase_images.sh"      
