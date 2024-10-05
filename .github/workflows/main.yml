@@ -23,7 +23,5 @@ jobs:
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }}"
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "docker stop angry_murdock"
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "containers=$(docker ps -q)"
-              for container in $containers; do
-                docker stop $container
-              done
+              ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "for container in $containers; do docker stop $container done"
               
