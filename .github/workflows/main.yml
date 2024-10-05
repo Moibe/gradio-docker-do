@@ -21,4 +21,5 @@ jobs:
         - name: stop all containers
           run: |
               ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }}"
+              docker stop angry_murdock
               
