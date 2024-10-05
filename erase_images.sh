@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /code/gradio-docker-do
-docker rmi $(docker images -q)
+[ -n "$(docker images -q)" ] && docker rmi $(docker images -q)
